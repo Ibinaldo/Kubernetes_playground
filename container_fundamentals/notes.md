@@ -51,7 +51,15 @@ two approaches to creating an image:
 1. Using a running container: container is started, modifications are applied to the container. From the container, **docker** commands are used to write modifications.
 2. Using a Dockerfile: a Dockerfile contains instructions for building an image. Each instruction adds a new layer to the image, which offers more control over which files are added to which layer.
 
-### Dockerfile
+## Dockerfile
 * Its a way to automate container builds
 * It contains all instructions required to build a container image
-* So instead of distributing images, you can distribute the Dockerfile. 
+* So instead of distributing images, you can distribute the Dockerfile.
+
+# 2.6 Docker Networking
+* Different drivers are available to define how networking should happen
+  1. bridge: The default network driver, used when applications run in standalone containers that need to communicate.
+  2. Host: Only in Docker swarm; used for standalone containers, where the container connects to the host network directly
+  3. Overlay: Used in Docker swarm to connect multiple Docker daemons together
+  4. macvlan: used with legacy Applications
+  5. none: disables networking, which is useful if a custom network driver is used.
