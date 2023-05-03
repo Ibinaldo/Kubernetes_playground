@@ -11,3 +11,15 @@
 * Many containers can run on top of the same host kernel
 * A container is not a virtual machine. Main operational difference is that a container has a default application that it must start
 * Without specifying the default application, the container will start and immediately stop again as it doesn't know what to do
+* Virtual machines are isolated, and you can run multiple OS virtual machines e.g. windows, Linux etc. However, it takes up a lot of overhead.
+
+# 2.2 Understanding container architecture
+* Container are Linux and built on top of Linux kernel features
+* Namespaces provide strict isolation at a Linux kernel level
+* CGroups provide resource allocation to guarantee dedicated resources to be available.
+* SELinux can be used to enforce security in a containerized environment.
+
+## 2.2.1 Docker architecture
+* Docker uses a client-server architecture
+* The docker **daemon** is responsible for building, running and downloading container images.
+* The docker **client** is responsible for communicating with the docker server. 
