@@ -63,3 +63,9 @@ two approaches to creating an image:
   3. Overlay: Used in Docker swarm to connect multiple Docker daemons together
   4. macvlan: used with legacy Applications
   5. none: disables networking, which is useful if a custom network driver is used.
+
+# 2.7 Docker Storage
+* Containers by default are ephemeral, and so is its storage
+* Storage can be mounted in a Docker container using the bind mount mechanism, but that ties the container to the host where the storage is present.
+
+----------------------------------------------------------------
