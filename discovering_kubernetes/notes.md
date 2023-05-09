@@ -28,3 +28,20 @@ You can create deployments, pods etc either via the command line or using YAML f
 - After defining resources in YAML, you can use ```kubectl create -f myfile.yaml``` to create the resource, or ```kubectl delete -f myfile.yaml```to delete the resource.
 
 - Pro Tip! YAML code can easily be generated using ```kubectl get <resources> -o yaml > myresource.yaml```
+
+- Generally bad practice to create pod as stand alone resources since if you delete a pod, there is nothing in the kubernetes ecosystem that will create the resource again. Usually better to create **deployments** instead.
+
+
+# 4.3 Core Kubernetes resources
+- Kubernetes is all about managing pods. Pods can have one or more containers. Usually pods have one container.
+
+- In a pod you can have volumes, which are making sure that files can be stored.
+
+- Ideally, pods should be replicated for scalability and redundancy (server failures etc). In order to do this, Kubernetes makes use of the concept of **Replica sets**. These take care of the replication and is not something a user manages.
+
+- The **deployment** is the application you create. It monitors the **Replica sets**, which in turn monitors the pods.
+
+# 4.4 Kubernetes API
+- The kubernetes API does not exist, its a collection of APIs which defines the resources that can be used in the kubernetes environment.
+
+- ```kubectl api-resources``` shows a list of resources that is defined in the API. ```kubectl api-versions``` shows resource versions. ```kubectl explain <resource_name>``` allows users to explore attributes of kubernetes resources as they are defined in the API.
