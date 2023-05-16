@@ -13,3 +13,5 @@ Set up a Pod that uses external NFS storage that is provided through a Persisten
 4. Your PV has been created, and it should have a status of **available**, meaning its not been bounded to a PersistentVolumeClaim yet. Let's make one. See **pvc-lab7.yaml**. Create the resource by running the command ```kubectl create -f pvc-lab7.yaml```
 
 5. After you create the PersistentVolumeClaim, the Kubernetes control plane looks for a PersistentVolume that satisfies the claim's requirements. If the control plane finds a suitable PersistentVolume with the same StorageClass, it binds the claim to the volume. You can check by running the command ``kubectl get pvc pv-claim-lab7``
+
+6. Finally we can create a Pod that uses the PersistentVolumeClaim as a volume. See **pod-pv-lab7.yaml**
