@@ -8,6 +8,10 @@ spec:
   storageClassName: nfs
   capacity:
     storage: 10Gi
+  volumeMode: Filesystem
+  mountOptions:
+    - hard
+    - nfsvers=4.1
   accessModes:
     - ReadWriteOnce
   nfs:
