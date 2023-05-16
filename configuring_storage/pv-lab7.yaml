@@ -8,7 +8,7 @@ spec:
   storageClassName: nfs
   capacity:
     storage: 10Gi
-  volumeMode: Filesystem
+  #volumeMode: Filesystem
   mountOptions:
     - hard
     - nfsvers=4.1
