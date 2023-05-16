@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pv-lab7-nfs
+spec:
+  volumes:
+    - name: nginx-pv-lab7-nfs
+      persistentVolumeClaim:
+        claimName: pvc-lab7
+  containers:
+    - name: nginx
+      image: nginx
+      volumeMounts:
+      - mountPath: "/sample/data"
+        name: nginx-pv-storage

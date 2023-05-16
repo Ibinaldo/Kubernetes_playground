@@ -5,7 +5,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: slow
+  storageClassName: nfs
   capacity:
     storage: 10Gi
   accessModes:
